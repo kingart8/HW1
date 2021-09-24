@@ -31,7 +31,7 @@ int main() {
 	};
 
 	for (int i = 0; i < k; i++) {
-		sum += (unsigned long)(mas[i]) * (unsigned long)pow(2, i);
+		sum += (unsigned long)(mas[i]) * (unsigned long)pow(2, (k-i-1));
 		if (sum > (ULONG_MAX - 1)) {
 			printf("\nThe entered number is too large!\n");
 			return -1;
