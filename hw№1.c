@@ -4,8 +4,8 @@
 #define TRUE 1
 
 int main() {
-	unsigned long  sum = 0;
-	int z = 0, k = 0;
+	long long  sum = 0, k = 0;
+	int z = 0;
 	char c, mas[CHAR_MAX];
 
 	printf("Enter binary number:  ");
@@ -30,9 +30,9 @@ int main() {
 		}
 	};
 
-	for (int i = 0; i < k; i++) {
-		sum += (unsigned long)(mas[i]) * (unsigned long)pow(2, (k-i-1));
-		if (sum > (ULONG_MAX - 1)) {
+	for (long long i = 0; i < k; i++) {
+		sum += (long long)(mas[i]) * (long long)pow(2, k - i - 1);
+		if (sum > (LLONG_MAX - 1)) {
 			printf("\nThe entered number is too large!\n");
 			return -1;
 		}
@@ -40,7 +40,8 @@ int main() {
 
 	if (z == TRUE)
 		sum *= (-1);
-	printf("\nDecimal number:  %lu\n", sum);
+
+	printf("\nDecimal number:  %lld\n", sum);
 
 	return 0;
 }
